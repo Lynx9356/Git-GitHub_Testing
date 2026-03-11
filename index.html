@@ -2,36 +2,42 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melis Karakaş | Creative Developer</title>
+    <title>Panel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="index-page">
 
-    <nav class="side-nav">
-        <div class="nav-logo">MK<span>.</span></div>
-        <div class="nav-socials">
-            <a href="#">Ln</a>
-            <a href="#">Be</a>
-            <a href="#">Gh</a>
-        </div>
-    </nav>
+    <aside class="sidebar">
+        <div class="logo-text">MK<span>.</span></div>
+        <nav>
+            <a href="#" class="menu-link active"><i class="fa-solid fa-grid-2"></i> <span>Panel</span></a>
+            <a href="#" class="menu-link"><i class="fa-solid fa-layer-group"></i> <span>Projeler</span></a>
+            <a href="login.html" class="menu-link"><i class="fa-solid fa-sign-out"></i> <span>Çıkış</span></a>
+        </nav>
+    </aside>
 
-    <main class="wrapper">
-        <section class="intro-section">
-            <div class="reveal-text">
-                <span class="tagline">// Tasarım & Teknoloji</span>
-                <h1 class="big-title">Dijital Deneyimler <br> <em>İnşa Ediyoruz.</em></h1>
-                <p class="sub-text">Karmaşık problemleri, basit ve etkileyici arayüzlere dönüştürüyoruz. Sınırları zorlayan projeler için buradayız.</p>
-                
-                <div class="button-group">
-                    <a href="#" class="cta-outline">Projeleri İncele</a>
-                    <div class="scroll-indicator">Aşağı Kaydır <span></span></div>
-                </div>
+    <main class="main-content">
+        <header>
+            <h1>Genel Bakış</h1>
+            <p>İstatistikleriniz ve aktif çalışmalarınız.</p>
+        </header>
+
+        <div class="stats-row">
+            <div class="card">
+                <h3>12</h3>
+                <p style="color: var(--text-muted);">Tamamlanan</p>
             </div>
-        </section>
+            <div class="card">
+                <h3>5</h3>
+                <p style="color: var(--text-muted);">Devam Eden</p>
+            </div>
+            <div class="card">
+                <h3>2</h3>
+                <p style="color: var(--text-muted);">Bekleyen</p>
+            </div>
+        </div>
     </main>
 
-    <div class="noise-overlay"></div>
 </body>
 </html>
