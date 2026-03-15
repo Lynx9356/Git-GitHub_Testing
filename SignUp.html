@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="CSS/Login_SignIn_CSS.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" method="post">
+        <div class="container">
+            <div class="left-box shadow" style="padding-bottom: 40px">
+                <h1>Create Account</h1>
+                <div class="socialContainer">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p>or use email for your registration</p>
+                <br />
+                <div class="box">
+                    <input type="text" id="tb_userName" name="tb_userName" class="textbox" placeholder="User Name" />
+                </div>
+                <div class="box">
+                    <input type="text" id="tb_name" name="tb_name" class="textbox" placeholder="Name" />
+                </div>
+                <div class="box">
+                    <input type="email" id="tb_mail" name="tb_mail" class="textbox" placeholder="Email" />
+                </div>
+                <div class="box">
+                    <input type="password" id="tb_password" name="tb_password" class="textbox" placeholder="Password" />
+                </div>
+
+                <div id="pnl_text" class="warningText" style="display:none;">
+                    <span id="lbl_text"></span>
+                </div>
+
+                <div>
+                    <button type="submit" id="btn_signUp" class="button">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById("btn_signUp").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const userName = document.getElementById("tb_userName").value.trim();
+            const name = document.getElementById("tb_name").value.trim();
+            const mail = document.getElementById("tb_mail").value.trim();
+            const password = document.getElementById("tb_password").value.trim();
+
+            // Tüm alanları kontrol et
+            if (!userName || !name || !mail || !password) {
+                showWarning("Lütfen tüm alanları doldurun.");
+                return;
+            }
+
+            // Email format kontrolü
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(mail)) {
+                showWarning("Lütfen geçerli bir email adresi girin.");
+                return;
+            }
+
+            // Şifre uzunluk kontrolü
+            if (password.length < 6) {
+                showWarning("Şifre en az 6 karakter olmalıdır.");
+                return;
+            }
+
+            // Hata yoksa uyarıyı gizle ve devam et
+            hideWarning();
+            alert("Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
+            window.location.href = "Login.html";
+        });
+
+        function showWarning(message) {
+            const panel = document.getElementById("pnl_text");
+            const label = document.getElementById("lbl_text");
+            label.textContent = message;
+            panel.style.display = "block";
+        }
+
+        function hideWarning() {
+            const panel = document.getElementById("pnl_text");
+            panel.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

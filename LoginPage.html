@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="CSS/Login_SignIn_CSS.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" method="post">
+        <div class="container">
+            <div class="left-box shadow">
+                <h1>Sign in</h1>
+                <div class="socialContainer">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p>or use your account</p>
+                <div class="box">
+                    <input type="text" id="tb_mail" name="tb_mail" class="textbox" placeholder="Email" />
+                </div>
+                <div class="box">
+                    <input type="password" id="tb_password" name="tb_password" class="textbox" placeholder="Password" />
+                </div>
+                <br />
+                <a href="#">Forgot Your Password?</a>
+                <div>
+                    <button type="submit" id="btn_signIn" class="button">SIGN IN</button>
+                </div>
+
+                <div id="pnl_text" class="warningText" style="display:none;">
+                    <span id="lbl_text"></span>
+                </div>
+            </div>
+
+            <div class="right-box shadow">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personel details and start journey with us</p>
+                <div>
+                    <button type="button" id="btn_signUp" class="button"
+                        onclick="window.location.href='SignUp.html'">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        document.getElementById("btn_signIn").addEventListener("click", function(e) {
+            e.preventDefault();
+            const email = document.getElementById("tb_mail").value;
+            const password = document.getElementById("tb_password").value;
+
+            if (!email || !password) {
+                showWarning("Lütfen tüm alanları doldurun.");
+            }
+        });
+
+        function showWarning(message) {
+            const panel = document.getElementById("pnl_text");
+            const label = document.getElementById("lbl_text");
+            label.textContent = message;
+            panel.style.display = "block";
+        }
+    </script>
+</body>
+</html>
